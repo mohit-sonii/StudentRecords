@@ -3,6 +3,8 @@ const app = express()
 const database = require('./database')
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
+require('dotenv').config()
+const PORT = process.env.PORT || 3000
 
 
 app.get('/',function (req,res){
@@ -18,4 +20,4 @@ app.use('/class12',class12Route)
 
 
 
-app.listen(3000)
+app.listen(PORT)

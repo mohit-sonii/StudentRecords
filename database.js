@@ -1,8 +1,11 @@
 
 const mongoose = require('mongoose')
+require('dotenv').config()
 // const CompassURL = 'mongodb://localhost:27017/StudentRecord'
-const CompassURL = 'mongodb+srv://mohitsoni:MohitSoni123!!!@studentrecord.6lgj57e.mongodb.net/studentrecord'
-mongoose.connect(CompassURL)
+// const CompassURL = 'mongodb+srv://mohitsoni:MohitSoni123!!!@studentrecord.6lgj57e.mongodb.net/studentrecord'
+const mongoURL = process.env.COMPASSURL
+mongoose.connect(mongoURL)
+
 
 const database = mongoose.connection
 
